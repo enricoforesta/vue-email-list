@@ -15,9 +15,17 @@
 
 <body>
     <div id="app">
-        <header></header>
-        <main></main>
-        <footer></footer>
+        <header>
+            <h1>Generatore casuale d'email</h1>
+        </header>
+        <main v-cloak>
+            <ul v-if="emails.length === numberEmail" class="lista">
+                <li v-for="(email,i) in emails">{{i + 1}} {{email}}</li>
+            </ul>
+            <div v-else>
+                <h3>Caricamento</h3>
+            </div>
+        </main>
     </div>
     <!-- VUE JS -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
