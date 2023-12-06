@@ -5,13 +5,14 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
-            numberEmail:10,
+            numberEmail:null,
             apiURL: "https://flynn.boolean.careers/exercises/api/random/mail",
             emails: [],
         }
     },
     methods: {
         randomEmail() {
+            this.emails = [];
             for (let i = 0; i < this.numberEmail; i++) {
                 axios.get(this.apiURL)
                     .then((email) => {
@@ -25,6 +26,6 @@ createApp({
         console.log(this.emails);
     },
     created(){
-        this.randomEmail();
+        // this.randomEmail();
     },
 }).mount('#app')

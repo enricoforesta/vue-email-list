@@ -19,12 +19,21 @@
             <h1>Generatore casuale d'email</h1>
         </header>
         <main v-cloak>
-            <ul v-if="emails.length === numberEmail" class="lista">
-                <li v-for="(email,i) in emails">{{i + 1}} {{email}}</li>
-            </ul>
-            <div v-else>
-                <h3>Caricamento</h3>
+            <div class="input">
+                <label for="input-number">Inserisci email da generare(10-100):</label>
+                <input v-model="numberEmail" @keyup.enter="randomEmail()" type="number" id="input-number" name="input-number" min="10" max="100" />
+                <input @click="randomEmail()" type="button" value="Genera">
             </div>
+            <div class="lista">
+                <ul v-if="emails.length === numberEmail" >
+                    <li v-for="(email,i) in emails">{{i + 1}} {{email}}</li>
+                </ul>
+                <div v-else>
+                    <h3>Caricamento</h3>
+                </div>
+            </div>
+
+
         </main>
     </div>
     <!-- VUE JS -->

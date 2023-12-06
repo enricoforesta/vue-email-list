@@ -25,7 +25,10 @@ header h1{
     text-align: center;
 }
 /* MAIN */
-main{
+.input{
+    text-align: center;
+}
+.lista{
     width: 80%;
     margin: 30px auto;
     border: 1px solid white;
